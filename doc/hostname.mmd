@@ -1,0 +1,25 @@
+hostname 1.0.0
+==============
+
+Synopsis
+--------
+
+	CREATE EXTENSION hostname;
+
+	SELECT hostname();
+		  hostname
+	--------------------
+	 myhost.example.com
+
+Description
+-----------
+
+This library contains a single PostgreSQL function, `hostname()`, which
+returns the PostgreSQL server host name. The function uses `gethostname()`
+to get the host name. If it fails, `NULL` will be returned. If you need it
+not to return `NULL`, use `COALESCE()`:
+
+	SELECT COALESCE(NULL, '[unknown]');
+     coalesce  
+    -----------
+     [unknown]
