@@ -1,0 +1,43 @@
+{
+  "name": "hostname",
+  "abstract": "Get the server host name",
+  "description": "Provides a function that returns the host name of the database server.",
+  "version": "1.0.0",
+  "maintainer": "Eren Turkoglu <erenxturkoglu.com>",
+  "license": "postgresql",
+  "provides": {
+    "hostname": {
+      "abstract": "Get the server host name",
+      "file": "sql/hostname.sql",
+      "docfile": "doc/hostname.mmd",
+      "version": "1.0.0"
+    }
+  },
+  "prereqs": {
+    "runtime": {
+      "requires": {
+        "PostgreSQL": "18.0.0"
+      }
+    }
+  },
+  "resources": {
+    "bugtracker": {
+      "web": "http://github.com/erenworld/pg-host/issues/"
+    },
+    "repository": {
+      "url": "git://github.com/erenworld/pg-host.git",
+      "web": "http://github.com/erenworld/pg-host/",
+      "type": "git"
+    }
+  },
+  "generated_by": "Eren Turkoglu",
+  "meta-spec": {
+    "version": "1.0.0",
+    "url": "http://pgxn.org/meta/spec.txt"
+  },
+  "tags": [
+    "hostname",
+    "host",
+    "gethostbyname"
+  ]
+}
