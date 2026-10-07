@@ -1,0 +1,24 @@
+name: CI
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "0 12 10 * *"
+jobs:
+  build:
+    strategy:
+      matrix:
+        pg: [18, 17, 16, 15, 14]
+      name: 🐘 PostgreSQL ${{ matrix.pg }}
+      runs-on: ubuntu-latest
+      container:
+        image: postgres:${{ matrix.pg }}
+        env:
+          INITDB_OPTS: --locale en_US.UTF-8 --encoding UTF8
+      steps:
+        - run: su postgres -c "$(which initdb) $INITDB_OPTS && $(which pg_ctl) start -w -l $PGDATA/server.log"
+        - uses: actions/checkout@v4
+        - run: apt-get -qq update && apt-get -qq install build-essential postgresql-server-dev-$PG_MAJOR
+        - run: make
+        - run: make install
+        - run: make installcheck PGUSER=postgres || (cat regression.diffs && false)
