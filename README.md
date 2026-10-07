@@ -114,4 +114,4 @@ Then try it:
 
 Dependencies
 ------------
-The `hostname` extension has no dependencies other than PostgreSQL.
+The `hostname` extension requires PostgreSQL 9.0 or higher and the POSIX API, `<unistd.h>`
