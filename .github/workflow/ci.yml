@@ -5,13 +5,12 @@ on:
   pull_request:
     branches: ["*"]
   schedule:
-    - cron: "0 12 10 * *" # Monthly at noon on the tenth
+    - cron: "0 12 10 * *"
 jobs:
   build:
     strategy:
       matrix:
-        pg:
-          [
+        pg: [
             19,
             18,
             17,
@@ -27,8 +26,7 @@ jobs:
             9.4,
             9.3,
             9.2,
-            9.1,
-            "9.0",
+            # Omitting 9.1. https://github.com/docker-library/postgres/issues/737
           ]
     name: 🐘 PostgreSQL ${{ matrix.pg }}
     runs-on: ubuntu-latest
