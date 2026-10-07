@@ -10,7 +10,7 @@
       "abstract": "Get the server host name",
       "file": "sql/hostname.sql",
       "docfile": "doc/hostname.mmd",
-      "version": "1.0.0"
+      "version": "1.0.1"
     }
   },
   "prereqs": {
