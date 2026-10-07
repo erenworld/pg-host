@@ -1,6 +1,8 @@
 hostname 1.0.3
 ==============
 
+[![Build Status](https://github.com/erenworld/pg-host/workflows/CI/badge.svg)](https://github.com/erenworld/pg-host/actions)
+
 This library contains a single PostgreSQL extension, `hostname`, which
 provides a function, `hostname()`, that returns the database server's host
 name:
