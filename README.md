@@ -1,4 +1,4 @@
-hostname 1.0.2
+hostname 1.0.3
 ==============
 
 This library contains a single PostgreSQL extension, `hostname`, which

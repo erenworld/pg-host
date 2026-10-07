@@ -1,7 +1,9 @@
 Revision history for PostgreSQL extension hostname.
 
+1.0.3
+      - 
 1.0.2
-     
+      - Fix test failure 
 1.0.1
       - Change the Makefile to read the distribution name and version from META.json
       - Fixed the Makefile to allow `PG_CONFIG=/path/to/pg_config` to actually work
